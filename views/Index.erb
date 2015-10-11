@@ -1,0 +1,22 @@
+<%=erb :form %>
+
+<div class="location latitude">
+  <%= location[:latitude] if location %>
+</div>
+
+<div class="location longitutde">
+  <%= location[:longitude] if location %>
+</div>
+
+<% if results %>
+
+<ul style="list-style-type:none"><% results.each do |result| %>
+  <b><li><%= result[:name] %> <%= result[:distance] %> mi </li></b>
+  <ul style="list-style: none">
+      <% result[:details].each do |item| %>
+        <li>- <%= item %></li>
+      <% end %>
+    </ul>
+  <% end%>
+</ol>
+<% end%>
