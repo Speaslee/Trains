@@ -12,7 +12,7 @@ class Bus
   end
 
   def self.all_stations
-    key = File.read  "./location_gen/gitignore/metro_api.txt"
+    key = File.read  "./location_gen/metro_api.txt"
     r = HTTParty.get(
       "https://api.wmata.com/Bus.svc/json/jStops",
       headers: { "api_key" => "#{key}" }
@@ -22,7 +22,7 @@ class Bus
   end
 
   def arriving_bus
-    key = File.read  "./location_gen/gitignore/metro_api.txt"
+    key = File.read  "./location_gen/metro_api.txt"
     r = HTTParty.get(
       "https://api.wmata.com/NextBusService.svc/json/jPredictions?StopID=#{@code}",
       headers: { "api_key" => "#{key}"}

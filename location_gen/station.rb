@@ -12,7 +12,7 @@ class Station
   end
 
   def upcoming_trains
-    key = File.read "./location_gen/gitignore/metro_api.txt"
+    key = File.read "./location_gen/metro_api.txt"
     r = HTTParty.get(
       "https://api.wmata.com/StationPrediction.svc/json/GetPrediction/#{@code}",
       headers: { "api_key" => "#{key}" }
@@ -21,7 +21,7 @@ class Station
   end
 
   def self.all_stations
-    key = File.read  "./location_gen/gitignore/metro_api.txt"
+    key = File.read  "./location_gen/metro_api.txt"
     r = HTTParty.get(
       "https://api.wmata.com/Rail.svc/json/jStations",
       headers: { "api_key" => "#{key}"  }
