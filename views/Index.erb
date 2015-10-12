@@ -10,13 +10,13 @@
 
 <% if results %>
 
-<ul style="list-style-type:none"><% results.each do |result| %>
+<ul><% results.each do |result| %>
   <b><li><%= result[:name] %> <%= result[:distance] %> mi </li></b>
-  <ul style="list-style: none">
+  <ul>
       <% result[:details].each do |item| %>
         <li>- <%= item %></li>
       <% end %>
     </ul>
   <% end%>
-</ol>
+</ul>
 <% end%>
