@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require 'tilt/erb'
-require 'pry'
 
 
 require './location_gen/train_program.rb'
