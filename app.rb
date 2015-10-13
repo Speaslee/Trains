@@ -10,7 +10,7 @@ class Transit < Sinatra::Base
 attr_accessor :location
 
   get '/' do
-    erb :index , locals: { location: nil, results: nil}
+    erb :list , locals: { location: nil, results: nil}
 
   end
 
@@ -19,7 +19,7 @@ attr_accessor :location
     long = params[:location][:longitude].to_f
     s = Travelmodes.new(lat,long)
     r= s.create_table
-   erb :index, locals: { location: nil, results: r}
+   erb :list, locals: { location: nil, results: r}
 
   end
 end
